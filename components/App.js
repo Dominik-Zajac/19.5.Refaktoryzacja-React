@@ -11,17 +11,18 @@ App = React.createClass({
 	},
 
 	handleSearch(searchingText) {
-		this.setState({
-			loading: true
-		});
-    	this.getGif(searchingText)
-      	.then(response =>
-            this.setState({
-            loading: false,
-            gif: response,
-            searchingText
-          })
-		).catch(error => console.log('Error!', error));
+	    this.setState({
+		loading: true
+	    });
+	    this.getGif(searchingText)
+		.then(response =>
+		    this.setState({
+			loading: false,
+			gif: response,
+			searchingText
+		    })
+		)
+		.catch(error => console.log('Error!', error));
 	},
 
 	getGif(searchingText) {
